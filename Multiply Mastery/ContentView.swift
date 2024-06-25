@@ -18,75 +18,77 @@ struct ContentView: View {
     let timerOptions = [1, 3, 5, 10, 15]
 
     var body: some View {
-        VStack() {
-            Text("Select Times Tables")
-                .multilineTextAlignment(.leading)
-                .font(.title)
-                .bold()
+        NavigationView {
+            VStack() {
+                Text("Select Times Tables")
+                    .multilineTextAlignment(.leading)
+                    .font(.title)
+                    .bold()
                 
-            withAnimation(.spring(duration: 1, bounce: 0.6)) {
-            VStack {
-                HStack {
-                    ForEach(timesTables, id: \.self) { image in
-                        if image % 2 != 0 {
-                            if selectedTimesTables.contains(image) {
-                                
-                                Image("Asset \((timesTablesAnimals)[image])")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 50, height: 40)
-                            } else {
-                                Text("\(image)")
-                                    .frame(width: 50, height: 40)
-                                
-                                    .background(Color.gray.opacity(0.3))
-                                    .cornerRadius(8)
-                                    .mask {
+                withAnimation(.spring(duration: 1, bounce: 0.6)) {
+                    VStack {
+                        HStack {
+                            ForEach(timesTables, id: \.self) { image in
+                                if image % 2 != 0 {
+                                    if selectedTimesTables.contains(image) {
+                                        
                                         Image("Asset \((timesTablesAnimals)[image])")
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 50, height: 40)
+                                    } else {
+                                        Text("\(image)")
+                                            .frame(width: 50, height: 40)
+                                        
+                                            .background(Color.gray.opacity(0.3))
+                                            .cornerRadius(8)
+                                            .mask {
+                                                Image("Asset \((timesTablesAnimals)[image])")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(width: 50, height: 40)
+                                            }
                                     }
+                                }
+                            }
+                        }
+                        HStack {
+                            
+                            ForEach(timesTables, id: \.self) { image in
+                                if image % 2 == 0 {
+                                    if selectedTimesTables.contains(image) {
+                                        
+                                        Image("Asset \((timesTablesAnimals)[image])")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 50, height: 40)
+                                        
+                                    } else {
+                                        Text("\(image)")
+                                            .frame(width: 50, height: 40)
+                                        
+                                            .background(Color.gray.opacity(0.3))
+                                            .cornerRadius(8)
+                                            .mask {
+                                                Image("Asset \((timesTablesAnimals)[image])")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(width: 50, height: 40)
+                                            }
+                                    }
+                                }
                             }
                         }
                     }
                 }
-                HStack {
+                
+                GeometryReader {
+                    let size = $0.size
                     
-                    ForEach(timesTables, id: \.self) { image in
-                        if image % 2 == 0 {
-                            if selectedTimesTables.contains(image) {
-                                
-                                Image("Asset \((timesTablesAnimals)[image])")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 50, height: 40)
-                                
-                            } else {
-                                Text("\(image)")
-                                    .frame(width: 50, height: 40)
-                                
-                                    .background(Color.gray.opacity(0.3))
-                                    .cornerRadius(8)
-                                    .mask {
-                                        Image("Asset \((timesTablesAnimals)[image])")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 50, height: 40)
-                                    }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-            GeometryReader {
-                let size = $0.size
-                
-                ScrollView(.horizontal) {
-                    HStack {
+                    ScrollView(.horizontal) {
+                        HStack {
                             ForEach(timesTables, id: \.self) { table in
-                               
+                                
                                 Button(action: {
                                     withAnimation(.spring(duration: 1, bounce: 0.6)) {
                                         if selectedTimesTables.contains(table) {
@@ -98,9 +100,9 @@ struct ContentView: View {
                                 }) {
                                     
                                     ZStack {
-                                            Color.orange.opacity(1)
-                                                .clipShape(.rect(cornerRadius: 20))
-                                                
+                                        Color.orange.opacity(1)
+                                            .clipShape(.rect(cornerRadius: 20))
+                                        
                                         VStack {
                                             Spacer()
                                             Image("\(table)")
@@ -109,7 +111,7 @@ struct ContentView: View {
                                                 Image("Asset \((timesTablesAnimals)[table])")
                                                     .resizable()
                                                     .scaledToFit()
-                                                    
+                                                
                                             } else {
                                                 Color.gray.opacity(0.6).mask {
                                                     Image("Asset \((timesTablesAnimals)[table])")
@@ -119,76 +121,76 @@ struct ContentView: View {
                                             }
                                         }
                                     }
-                                        .padding(.horizontal, 65)
-                                        .frame(width: size.width, height: 320)
-                                       
-                                        .visualEffect { content, geometryProxy in
-                                            content
-                                                .rotationEffect(rotation(geometryProxy, rotation: 5))
-                                                .scaleEffect(scale(geometryProxy, scaled: 0.2), anchor: .trailing)
-                                                .offset(x: minX(geometryProxy))
-                                                .offset(x: excessMinX(geometryProxy, offset: 10))
-                                        }
+                                    .padding(.horizontal, 65)
+                                    .frame(width: size.width, height: 320)
+                                    
+                                    .visualEffect { content, geometryProxy in
+                                        content
+                                            .rotationEffect(rotation(geometryProxy, rotation: 5))
+                                            .scaleEffect(scale(geometryProxy, scaled: 0.2), anchor: .trailing)
+                                            .offset(x: minX(geometryProxy))
+                                            .offset(x: excessMinX(geometryProxy, offset: 10))
+                                    }
                                 }
                                 .zIndex(zIndex(table))
+                            }
+                        }
+                        .frame(height: 340)
+                    }
+                    .scrollTargetBehavior(.paging)
+                    .scrollIndicators(.hidden)
+                }
+                
+                Text("Questions to answer")
+                    .font(.custom("Helvetica", fixedSize: 22))
+                    .bold()
+                
+                HStack {
+                    ForEach(questionsOptions, id: \.self) { question in
+                        Button(action: {
+                            selectedQuestions = question
+                        }) {
+                            Text("\(question)")
+                                .frame(width: 30, height: 20)
+                                .padding()
+                                .background(selectedQuestions == question ? Color.orange : Color.gray.opacity(0.3))
+                                .cornerRadius(8)
+                            
                         }
                     }
-                    .frame(height: 340)
                 }
-                .scrollTargetBehavior(.paging)
-                .scrollIndicators(.hidden)
-            }
-
-            Text("Questions to answer")
-                .font(.custom("Helvetica", fixedSize: 22))
-                .bold()
-            
-            HStack {
-                ForEach(questionsOptions, id: \.self) { question in
-                    Button(action: {
-                        selectedQuestions = question
-                    }) {
-                        Text("\(question)")
-                            .frame(width: 30, height: 20)
-                            .padding()
-                            .background(selectedQuestions == question ? Color.orange : Color.gray.opacity(0.3))
-                            .cornerRadius(8)
-                            
-                    }
-                }
-            }
-
-            Text("Timer")
-                .font(.custom("Helvetica", fixedSize: 22))
-                .bold()
-            
-            HStack {
-                ForEach(timerOptions, id: \.self) { time in
-                    Button(action: {
-                        selectedTimer = time
-                    }) {
-                        Text("\(time)")
-                            .frame(width: 30, height: 20)
-                            .padding()
-                            .background(selectedTimer == time ? Color.orange : Color.gray.opacity(0.3))
-                            .cornerRadius(8)
-                    }
-                }
-            }
-
-            Button(action: {
                 
-            }) {
-                Text("Start")
-                    .font(.headline)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.green)
-                    .foregroundColor(.white)
-                    .cornerRadius(20)
+                Text("Timer")
+                    .font(.custom("Helvetica", fixedSize: 22))
+                    .bold()
+                
+                HStack {
+                    ForEach(timerOptions, id: \.self) { time in
+                        Button(action: {
+                            selectedTimer = time
+                        }) {
+                            Text("\(time)")
+                                .frame(width: 30, height: 20)
+                                .padding()
+                                .background(selectedTimer == time ? Color.orange : Color.gray.opacity(0.3))
+                                .cornerRadius(8)
+                        }
+                    }
+                }
+                
+                NavigationLink(destination: ExerciseView(selectedTimesTables: $selectedTimesTables, selectedQuestions: $selectedQuestions, selectedTimer: $selectedTimer)) {
+                    Text("Start")
+                        .font(.headline)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(20)
+                }
+                .padding()
             }
-            .padding()
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     nonisolated func minX(_ proxy: GeometryProxy) -> CGFloat {
