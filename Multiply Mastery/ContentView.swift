@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedTimesTables: Set<Int> = []
-    @State private var selectedQuestions = 100
-    @State private var selectedTimer = 5
+//    @State private var path = NavigationPath()
+    
+    @State private var selectedTimesTables: Set<Int> = [1]
+    @State private var selectedQuestions = 5
+    @State private var selectedTimer = 1
+    @State private var timesTablesAnimals = Array(1...19).shuffled()
 
     let timesTables = Array(1...12)
-    @State private var timesTablesAnimals = Array(1...19).shuffled()
+    
     let questionsOptions = [5, 10, 20, 50, 100]
     let timerOptions = [1, 3, 5, 10, 15]
 
@@ -178,7 +181,7 @@ struct ContentView: View {
                     }
                 }
                 
-                NavigationLink(destination: ExerciseView(selectedTimesTables: $selectedTimesTables, selectedQuestions: $selectedQuestions, selectedTimer: $selectedTimer)) {
+                NavigationLink(destination: ExerciseView(selectedTimesTables: $selectedTimesTables, selectedQuestions: $selectedQuestions, selectedTime: $selectedTimer)) {
                     Text("Start")
                         .font(.headline)
                         .padding()
@@ -190,7 +193,6 @@ struct ContentView: View {
                 .padding()
             }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     nonisolated func minX(_ proxy: GeometryProxy) -> CGFloat {

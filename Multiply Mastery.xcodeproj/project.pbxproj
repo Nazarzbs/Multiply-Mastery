@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE44DF502C316D1F00720E79 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44DF4F2C316D1F00720E79 /* ScoreboardView.swift */; };
+		CE554A392C2EE2A700498314 /* EmitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554A382C2EE29900498314 /* EmitterView.swift */; };
+		CE554A3B2C2F29F200498314 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554A3A2C2F29EC00498314 /* TimerView.swift */; };
 		CE5F5F4F2C298C0F001B3C30 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F5F4E2C298C06001B3C30 /* ExerciseView.swift */; };
-		CE5F5F522C29A45C001B3C30 /* BlobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F5F512C29A454001B3C30 /* BlobView.swift */; };
+		CE5F5F522C29A45C001B3C30 /* KeyframeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F5F512C29A454001B3C30 /* KeyframeAnimationView.swift */; };
 		CE5F5F542C29A467001B3C30 /* MultiplicationDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F5F532C29A460001B3C30 /* MultiplicationDisplayView.swift */; };
-		CE5F5F562C29A474001B3C30 /* AnswerInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F5F552C29A473001B3C30 /* AnswerInputView.swift */; };
 		CE5F5F582C29A482001B3C30 /* NumericKeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F5F572C29A481001B3C30 /* NumericKeypadView.swift */; };
-		CE5F5F622C29C536001B3C30 /* BlobAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F5F612C29C536001B3C30 /* BlobAnimation.swift */; };
 		CE9829D72C271298004AD4B9 /* Multiply_MasteryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9829D62C271298004AD4B9 /* Multiply_MasteryApp.swift */; };
 		CE9829D92C271298004AD4B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9829D82C271298004AD4B9 /* ContentView.swift */; };
 		CE9829DB2C27129B004AD4B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9829DA2C27129B004AD4B9 /* Assets.xcassets */; };
@@ -20,12 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE44DF4F2C316D1F00720E79 /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
+		CE554A382C2EE29900498314 /* EmitterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmitterView.swift; sourceTree = "<group>"; };
+		CE554A3A2C2F29EC00498314 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		CE5F5F4E2C298C06001B3C30 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
-		CE5F5F512C29A454001B3C30 /* BlobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlobView.swift; sourceTree = "<group>"; };
+		CE5F5F512C29A454001B3C30 /* KeyframeAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyframeAnimationView.swift; sourceTree = "<group>"; };
 		CE5F5F532C29A460001B3C30 /* MultiplicationDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationDisplayView.swift; sourceTree = "<group>"; };
-		CE5F5F552C29A473001B3C30 /* AnswerInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerInputView.swift; sourceTree = "<group>"; };
 		CE5F5F572C29A481001B3C30 /* NumericKeypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericKeypadView.swift; sourceTree = "<group>"; };
-		CE5F5F612C29C536001B3C30 /* BlobAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlobAnimation.swift; sourceTree = "<group>"; };
 		CE9829D32C271298004AD4B9 /* Multiply Mastery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multiply Mastery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9829D62C271298004AD4B9 /* Multiply_MasteryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiply_MasteryApp.swift; sourceTree = "<group>"; };
 		CE9829D82C271298004AD4B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,11 +49,12 @@
 		CE5F5F502C29A429001B3C30 /* ExerciseViews */ = {
 			isa = PBXGroup;
 			children = (
+				CE44DF4F2C316D1F00720E79 /* ScoreboardView.swift */,
+				CE554A3A2C2F29EC00498314 /* TimerView.swift */,
+				CE554A382C2EE29900498314 /* EmitterView.swift */,
 				CE5F5F572C29A481001B3C30 /* NumericKeypadView.swift */,
-				CE5F5F552C29A473001B3C30 /* AnswerInputView.swift */,
 				CE5F5F532C29A460001B3C30 /* MultiplicationDisplayView.swift */,
-				CE5F5F512C29A454001B3C30 /* BlobView.swift */,
-				CE5F5F612C29C536001B3C30 /* BlobAnimation.swift */,
+				CE5F5F512C29A454001B3C30 /* KeyframeAnimationView.swift */,
 				CE5F5F4E2C298C06001B3C30 /* ExerciseView.swift */,
 			);
 			path = ExerciseViews;
@@ -164,13 +167,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5F5F4F2C298C0F001B3C30 /* ExerciseView.swift in Sources */,
+				CE44DF502C316D1F00720E79 /* ScoreboardView.swift in Sources */,
 				CE9829D92C271298004AD4B9 /* ContentView.swift in Sources */,
-				CE5F5F562C29A474001B3C30 /* AnswerInputView.swift in Sources */,
-				CE5F5F622C29C536001B3C30 /* BlobAnimation.swift in Sources */,
 				CE9829D72C271298004AD4B9 /* Multiply_MasteryApp.swift in Sources */,
 				CE5F5F582C29A482001B3C30 /* NumericKeypadView.swift in Sources */,
 				CE5F5F542C29A467001B3C30 /* MultiplicationDisplayView.swift in Sources */,
-				CE5F5F522C29A45C001B3C30 /* BlobView.swift in Sources */,
+				CE554A392C2EE2A700498314 /* EmitterView.swift in Sources */,
+				CE554A3B2C2F29F200498314 /* TimerView.swift in Sources */,
+				CE5F5F522C29A45C001B3C30 /* KeyframeAnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

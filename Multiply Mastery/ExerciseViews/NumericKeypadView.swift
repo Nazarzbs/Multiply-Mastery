@@ -3,15 +3,15 @@
 //  Multiply Mastery
 //
 //  Created by Nazar on 24.06.2024.
-//
+
 
 import SwiftUI
 
 struct NumericKeypadView: View {
     
-    @Binding var answer: [String] 
-    @State var numberOfButtonsPressed = 0
-    
+    @Binding var userAnswer: String
+    @Binding var isInteractive: Bool 
+
     let numbers = [
         ["1", "2", "3"],
         ["4", "5", "6"],
@@ -25,23 +25,8 @@ struct NumericKeypadView: View {
                 HStack(spacing: 7) {
                     ForEach(row, id: \.self) { number in
                         Button(action: {
-                            if number == "<" {
-                                if numberOfButtonsPressed != 0 {
-                                    
-                                    answer[numberOfButtonsPressed - 1] = ""
-                                    numberOfButtonsPressed -= 1
-                                    
-                                } else {
-                                    numberOfButtonsPressed = 0
-                                    
-                                }
-                            } else if numberOfButtonsPressed >= 3 {
-                                numberOfButtonsPressed = 0
-                                answer = ["?", " ", " "]
-                               
-                            } else if numberOfButtonsPressed <= 2 {
-                                answer[numberOfButtonsPressed] = number
-                                numberOfButtonsPressed += 1
+                            if isInteractive {
+                                buttonPressed(number)
                             }
                         }) {
                             Text(number)
@@ -54,6 +39,30 @@ struct NumericKeypadView: View {
                     }
                 }
             }
+        }
+        .disabled(!isInteractive)
+    }
+    
+    private func buttonPressed(_ title: String) {
+            switch title {
+            case "<":
+                if !userAnswer.isEmpty {
+                    userAnswer.removeLast()
+                }
+            case "↩︎":
+                // Perform any action on return key pressed
+                break
+            default:
+                if userAnswer.count < 3 && userAnswer != "?" {
+                    userAnswer.append(title)
+                } else if userAnswer.count < 3 && userAnswer == "?"{
+                    userAnswer = title
+                } else if userAnswer.count > 2 {
+                    userAnswer = "?"
+                }
+            }
+        if userAnswer == "" {
+            userAnswer = "?"
         }
     }
 }
