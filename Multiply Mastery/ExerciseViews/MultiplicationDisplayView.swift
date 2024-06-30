@@ -19,6 +19,7 @@ struct MultiplicationDisplayView: View {
     @Binding var questionsDone: Int
     @Binding var trigger: Bool
     @Binding var selectedQuestions: Int
+    @Binding var elapsedTime: Int
     
     var firstNumber: Int {
         guard let randomTable = selectedTimesTables.randomElement() else {
@@ -68,6 +69,16 @@ struct MultiplicationDisplayView: View {
                             }
                         }
                 
+                } else if elapsedTime <= 0 {
+                    Text("The Time is Over!")
+                        .foregroundColor(.red)
+                        .bold()
+                        .font(.system(size: 45))
+                        .onAppear {
+                            withAnimation(.spring) {
+                                trigger = true
+                            }
+                        }
                 } else {
                     
                     Text("\(number1) × \(number2) = \(userAnswer)")

@@ -11,12 +11,14 @@ import Combine
 struct TimerView: View {
     
     @State private var timer: Timer?
-    @State var elapsedTime: Int = 0
     @State private var showScore: Bool = false
+    
+    @Binding var elapsedTime: Int 
     @Binding var selectedTime: Int
     @Binding var questionsDone: Int
     @Binding var selectedQuestions: Int
     @Binding var stopTimer: Bool
+    @Binding var trigger: Bool
     
     private let width: Double = 180
     
@@ -26,7 +28,7 @@ struct TimerView: View {
             Text(timeString(from: elapsedTime))
                 .onAppear {
                     startTimer()
-                    elapsedTime = selectedTime 
+                    elapsedTime = selectedTime * 60
                 }
                 .font(.system(size: 50, weight: .medium, design: .rounded))
                 .padding()
@@ -52,6 +54,11 @@ struct TimerView: View {
                     
                     print(elapsedTime)
                 } else {
+                  
+                    withAnimation(.spring) {
+                        trigger = true
+                        
+                    }
                     invalidateTimer()
                     showScore = true
                 }
@@ -60,7 +67,7 @@ struct TimerView: View {
                     invalidateTimer()
                     
                     showScore = true
-                } else if stopTimer == true{
+                } else if stopTimer == true {
                     invalidateTimer()
                 }
             }

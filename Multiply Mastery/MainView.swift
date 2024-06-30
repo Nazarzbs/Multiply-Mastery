@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  Multiply Mastery
 //
 //  Created by Nazar on 22.06.2024.
@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
-//    @State private var path = NavigationPath()
+struct MainView: View {
     
     @State private var selectedTimesTables: Set<Int> = [1]
     @State private var selectedQuestions = 5
@@ -232,6 +231,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }

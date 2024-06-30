@@ -23,6 +23,7 @@ struct ExerciseView: View {
     @State private var questionsDone: Int = 0
     @State private var trigger: Bool = false
     @State private var stopTimer: Bool = false
+    @State private var elapsedTime: Int = 0
 
     var firstNumber: Int {
         guard let randomTable = selectedTimesTables.randomElement() else {
@@ -40,12 +41,12 @@ struct ExerciseView: View {
             ZStack {
         
                     VStack(spacing: 5) {
-                        TimerView(selectedTime: $selectedTime, questionsDone: $questionsDone, selectedQuestions: $selectedQuestions, stopTimer: $stopTimer)
+                        TimerView(elapsedTime: $elapsedTime, selectedTime: $selectedTime, questionsDone: $questionsDone, selectedQuestions: $selectedQuestions, stopTimer: $stopTimer, trigger: $trigger)
                             .padding(.top, -80)
                         
                         KeyFrameAnimationView(number1: $number1, trigger: $trigger)
                         
-                        MultiplicationDisplayView(selectedTimesTables: $selectedTimesTables, userAnswer: $userAnswer, number1: $number1, number2: $number2, isInteractive: $isInteractive, questionsDone: $questionsDone, trigger: $trigger, selectedQuestions: $selectedQuestions)
+                        MultiplicationDisplayView(selectedTimesTables: $selectedTimesTables, userAnswer: $userAnswer, number1: $number1, number2: $number2, isInteractive: $isInteractive, questionsDone: $questionsDone, trigger: $trigger, selectedQuestions: $selectedQuestions, elapsedTime: $elapsedTime)
                         
                         NumericKeypadView(userAnswer: $userAnswer, isInteractive: $isInteractive)
                             .padding()

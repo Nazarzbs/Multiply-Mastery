@@ -15,7 +15,7 @@
 		CE5F5F542C29A467001B3C30 /* MultiplicationDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F5F532C29A460001B3C30 /* MultiplicationDisplayView.swift */; };
 		CE5F5F582C29A482001B3C30 /* NumericKeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F5F572C29A481001B3C30 /* NumericKeypadView.swift */; };
 		CE9829D72C271298004AD4B9 /* Multiply_MasteryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9829D62C271298004AD4B9 /* Multiply_MasteryApp.swift */; };
-		CE9829D92C271298004AD4B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9829D82C271298004AD4B9 /* ContentView.swift */; };
+		CE9829D92C271298004AD4B9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9829D82C271298004AD4B9 /* MainView.swift */; };
 		CE9829DB2C27129B004AD4B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9829DA2C27129B004AD4B9 /* Assets.xcassets */; };
 		CE9829DE2C27129B004AD4B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9829DD2C27129B004AD4B9 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -30,7 +30,7 @@
 		CE5F5F572C29A481001B3C30 /* NumericKeypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericKeypadView.swift; sourceTree = "<group>"; };
 		CE9829D32C271298004AD4B9 /* Multiply Mastery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multiply Mastery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9829D62C271298004AD4B9 /* Multiply_MasteryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiply_MasteryApp.swift; sourceTree = "<group>"; };
-		CE9829D82C271298004AD4B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CE9829D82C271298004AD4B9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CE9829DA2C27129B004AD4B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE9829DD2C27129B004AD4B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +81,7 @@
 			children = (
 				CE5F5F502C29A429001B3C30 /* ExerciseViews */,
 				CE9829D62C271298004AD4B9 /* Multiply_MasteryApp.swift */,
-				CE9829D82C271298004AD4B9 /* ContentView.swift */,
+				CE9829D82C271298004AD4B9 /* MainView.swift */,
 				CE9829DA2C27129B004AD4B9 /* Assets.xcassets */,
 				CE9829DC2C27129B004AD4B9 /* Preview Content */,
 			);
@@ -168,7 +168,7 @@
 			files = (
 				CE5F5F4F2C298C0F001B3C30 /* ExerciseView.swift in Sources */,
 				CE44DF502C316D1F00720E79 /* ScoreboardView.swift in Sources */,
-				CE9829D92C271298004AD4B9 /* ContentView.swift in Sources */,
+				CE9829D92C271298004AD4B9 /* MainView.swift in Sources */,
 				CE9829D72C271298004AD4B9 /* Multiply_MasteryApp.swift in Sources */,
 				CE5F5F582C29A482001B3C30 /* NumericKeypadView.swift in Sources */,
 				CE5F5F542C29A467001B3C30 /* MultiplicationDisplayView.swift in Sources */,
