@@ -9,12 +9,12 @@ import SwiftUI
 
 struct MainView: View {
     
-    @State private var selectedTimesTables: Set<Int> = [1]
+    @State private var selectedTimesTables: Set<Int> = []
     @State private var selectedQuestions = 5
     @State private var selectedTimer = 1
     @State private var timesTablesAnimals = Array(1...19).shuffled()
 
-    let timesTables = Array(1...12)
+    let timesTables = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     
     let questionsOptions = [5, 10, 20, 50, 100]
     let timerOptions = [1, 3, 5, 10, 15]

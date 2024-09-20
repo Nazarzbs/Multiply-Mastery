@@ -16,7 +16,7 @@ struct NumericKeypadView: View {
         ["1", "2", "3"],
         ["4", "5", "6"],
         ["7", "8", "9"],
-        ["<", "0", "↩︎"]
+        ["0", "<"]
     ]
     
     var body: some View {
@@ -27,6 +27,9 @@ struct NumericKeypadView: View {
                         Button(action: {
                             if isInteractive {
                                 buttonPressed(number)
+                                // Trigger haptic feedback
+                                let generator = UIImpactFeedbackGenerator(style: .medium)
+                                generator.impactOccurred()
                             }
                         }) {
                             Text(number)
